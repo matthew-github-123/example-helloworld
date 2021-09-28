@@ -138,6 +138,7 @@ export async function checkProgram(): Promise<void> {
   try {
     const programKeypair = await createKeypairFromFile(PROGRAM_KEYPAIR_PATH);
     programId = programKeypair.publicKey;
+    console.log('Program Id:', programId);
   } catch (err) {
     const errMsg = (err as Error).message;
     throw new Error(
